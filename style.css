@@ -13,3 +13,7 @@ a:hover {
 	transition: color ease-in 0.25s;
 	color: blue;
 }
+
+.boehoehoe input:nth-of-type(1) {
+	border: 0;
+}
