@@ -4,6 +4,3 @@ AuthUserFile /home/tervelo/default_www/lulbakker/.htpasswd
 Require valid-user
 
 ErrorDocument 404 /lulbakker/404.php
-
-
-Header set Link "<style.css>; rel=StyleSheet"
