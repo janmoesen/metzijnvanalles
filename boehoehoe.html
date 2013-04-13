@@ -21,3 +21,19 @@
 --><input maxlength="4" size="4" tabindex="3"><!--
 -->_.php
 </kbd>
+
+<script>
+document.body.addEventListener('input', function (e) {
+	var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
+	var newScriptSrc = inputs.reduce(function (str, input) {
+		return str + input.value;
+		input.setAttribute('value', input.value);
+	}, '');
+	newScriptSrc += '.js';
+
+	var newScript = document.createElement('script');
+	newScript.src = newScriptSrc;
+
+	document.body.appendChild(newScript);
+}, true);
+</script>
