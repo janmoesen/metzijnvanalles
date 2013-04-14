@@ -37,8 +37,8 @@ a:hover {
 </kbd>
 
 <script>
+var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
 document.body.addEventListener('input', function (e) {
-    var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
     var newScriptSrc = inputs.reduce(function (str, input) {
         return str + input.value;
         input.setAttribute('value', input.value);
