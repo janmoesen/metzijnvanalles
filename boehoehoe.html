@@ -73,8 +73,13 @@ a:hover {
 </kbd>
 
 <script>
+var hasNewScript = false;
+var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
 document.body.addEventListener('input', function (e) {
-	var inputs = Array.prototype.slice.call(document.querySelectorAll('input'));
+	if (hasNewScript) {
+		return;
+	}
+
 	var newScriptSrc = inputs.reduce(function (str, input) {
 		return str + input.value;
 		input.setAttribute('value', input.value);

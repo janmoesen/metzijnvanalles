@@ -1,4 +1,6 @@
 alert('yes!');
+hasNewScript = true;
+
 document.body.className = 'boehoehoe';
 inputs.forEach(function (input) {
 	input.disabled = true;
