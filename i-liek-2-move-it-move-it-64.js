@@ -1,0 +1,2 @@
+alert('Yes');
+hasNewScript = true;

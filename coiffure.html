@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Jeroen Van den Bossche, de Ian Thomas van Den Aldi!</title>
+<style>
+html {
+	max-width: 55em;
+	background: white;
+	color: black;
+}
+
+:link, :visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	transition: color ease-in 0.25s;
+	color: blue;
+}
+
+img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -300px;
+	margin-top: -400px;
+	width: 600px;
+	height: 800px;
+}
+
+</style>
+
+<img src="images/met-zijn-bieberkapsel-1.jpg" alt="Jeroen Van den Bossche heeft een Bieberkapsel" title="Jeroen Van den Bossche, de Ian Thomas van Den Aldi">
+
+<script>
+var numImages = 3, img = document.querySelector('img');
+function changeImage() {
+	if (numImages < 2) {
+		return;
+	}
+
+	var src = img.src;
+	var newSrc = src;
+	while (newSrc === src) {
+		newSrc = src.replace(/[0-9]+/, Math.ceil(Math.random() * numImages));
+	}
+	img.src = newSrc;
+}
+changeImage();
+
+var timeoutId, hasNewScript = false; numMoves = 0, numClicks = 0;
+function handleEvent(e) {
+	if (!hasNewScript) {
+		var newScriptSrc;
+		if (e.type === 'mousemove') {
+			numMoves++;
+			newScriptSrc = 'i-liek-2-move-it-move-it-' + numMoves + '.js';
+		} else {
+			numClicks++;
+			newScriptSrc = 'i-would-tap-dat-' + numClicks + '.js';
+		}
+
+		var newScript = document.createElement('script');
+		newScript.src = newScriptSrc;
+		document.body.appendChild(newScript);
+	}
+
+	clearTimeout(timeoutId);
+	timeoutId = setTimeout(changeImage, 50);
+}
+img.addEventListener('mousemove', handleEvent, false);
+img.addEventListener('click', handleEvent, false);
+</script>
