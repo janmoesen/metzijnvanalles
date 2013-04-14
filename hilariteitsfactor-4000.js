@@ -1,27 +1,27 @@
-document.body.innerHTML = '<img src="images/met-zijn-grijns-1.jpg">';
+document.body.innerHTML = '<img src="images/met-zijn-grijns-1.jpg"><img src="images/met-zijn-grijns-2.jpg">';
 
-var img = document.images[0];
+var img = document.images[1];
 var numCycles = 0;
 var delay = 500;
-var timeoutId;
+var togglerTimeoutId, navigationTimeoutId;
 
 function toggle() {
-	var newSrc = img.src.replace('-1', '-2');
-	console.debug(img.src);
-	console.debug(newSrc);
-	if (newSrc == img.src) {
-		newSrc = img.src.replace('-2', '-1')
-	}
-	img.src = newSrc;
-	timeoutId = setTimeout(toggle, delay);
-	delay /= 1.1;
+	console.debug(new Date(), ': ', numCycles, delay, togglerTimeoutId, navigationTimeoutId);
+	img.style.display = img.style.display == 'none'
+		? 'inline-block'
+		: 'none';
 
-	if (delay <= 15) {
+	delay /= 1.1;
+	togglerTimeoutId = setTimeout(toggle, delay);
+
+	if (delay <= 15 && !navigationTimeoutId) {
 		numCycles++;
 
 		if (numCycles >= 10) {
-			clearTimeout(timeoutId);
-			location = 'http://metzijnexcollegasdiehemzullenmissen.be/';
+			navigationTimeoutId = setTimeout(function () {
+				clearTimeout(togglerTimeoutId);
+				location = 'http://metzijnexcollegasdiehemzullenmissen.be/';
+			}, 3000);
 		}
 	}
 }
