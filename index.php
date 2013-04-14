@@ -9,9 +9,13 @@ if (!isset($_SERVER['HTTP_HOST'])) {
 	echo 'No "Host" header found.';
 }
 
+if (strpos($_SERVER['HTTP_HOST'], 'www.') === 0) {
+	header('Location: http://' . substr($_SERVER['HTTP_HOST'], 4), true, 301);
+	exit;
+}
+
 switch ($_SERVER['HTTP_HOST']) {
 	case 'metzijnbieberkapsel.be':
-	case 'www.metzijnbieberkapsel.be':
 		require_once('coiffure.html');
 		break;
 	default:
