@@ -3,11 +3,15 @@ function removeElement(element) {
 }
 removeElement(document.querySelector('kbd'));
 
+document.documentElement.style.textAlign = 'center';
+
+var h1 = document.querySelector('h1');
+h1.textContent = 'Moge uw verdere leven op rollen lopen!';
+
 var img = document.createElement('img');
 img.src = 'images/met-zijn-rollen.jpg';
 document.body.appendChild(img);
 
-document.querySelector('h1').textContent = 'Veel plezier bij Engagor! En met uw rollen.';
 var footnote = document.createElement('p');
 footnote.textContent = 'En bedank uw rollen maar voor de extra bijdrages!';
 footnote.className = 'small';
