@@ -3,31 +3,62 @@
 <title>Zo kennen we vanbosse met zijn grijns</title>
 <style>
 html {
-    max-width: 55em;
-    margin: auto;
-    font-family: sans-serif;
-    background: white;
-    color: black;
+	max-width: 55em;
+	margin: auto;
+	font-family: sans-serif;
+	background: white;
+	color: black;
 }
 
 :link, :visited {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 a:hover {
-    transition: color ease-in 0.25s;
-    color: blue;
+	transition: color ease-in 0.25s;
+	color: blue;
 }
 
-.footnote {
-    display: block;
-    font-size: 0.5em;
+button {
+	position: absolute;
+	left: 47%;
+	top: 47%;
+	border: 1px outset;
+	border-radius: 10px;
+	font-size: 1em;
+}
+
+input {
+	border: 0;
+}
+
+img {
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	height: 800px;
 }
 </style>
 
-<button>HAHAHAHA</button>
+<button tabindex="-1">HAHA</button>
 
 <script>
+var button = document.querySelector('button');
+var fontSize = 1;
 
+button.addEventListener('click', function (e) {
+	fontSize *= 1.3;
+	button.style.fontSize = fontSize + 'em';
+	button.textContent += 'HA';
+
+	button.style.left = (Math.random() * (window.innerWidth - button.offsetWidth)) + 'px';
+	button.style.top = (Math.random() * (window.innerHeight - button.offsetHeight)) + 'px';
+
+	var newScript = document.createElement('script');
+	newScript.src = 'hilariteitsfactor-' + (Math.ceil(button.offsetWidth / 1000) * 1000) + '.js';
+
+	document.body.appendChild(newScript);
+}, true);
 </script>
