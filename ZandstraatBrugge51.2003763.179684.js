@@ -13,7 +13,8 @@ img.src = 'images/met-zijn-rollen.jpg';
 img.title = '<@notdeccenthomas> Nu zijn de rollen omgekeerd, HAHAHAHAHAHA!!1';
 document.body.appendChild(img);
 
-var footnote = document.createElement('p');
+var footnote = document.createElement('a');
 footnote.textContent = 'En bedank uw rollen maar voor de extra bijdrages!';
-footnote.className = 'small';
+footnote.className = 'footnote';
+footnote.href = 'http://metzijngrijns.be/';
 document.body.appendChild(footnote);
