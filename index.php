@@ -18,6 +18,9 @@ switch ($_SERVER['HTTP_HOST']) {
 	case 'metzijnbieberkapsel.be':
 		require_once('coiffure.html');
 		break;
+	case 'metzijnrollen.be':
+		require_once('tieterij.html');
+		break;
 	default:
 		header('Status: 404');
 		echo 'Unknown host requested.';
