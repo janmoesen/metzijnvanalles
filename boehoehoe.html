@@ -7,6 +7,7 @@ html {
 	position: relative;
 	max-width: 55em;
 	margin: auto;
+	font-family: sans-serif;
 	background: white;
 	color: black;
 }
@@ -21,35 +22,62 @@ a:hover {
 	color: blue;
 }
 
+input {
+	background: transparent;
+}
+
+input:focus, input:active {
+	border-color: blue;
+}
+
 .boehoehoe input {
 	-webkit-transition: all ease-out 1.25s;
 	     -o-transition: all ease-out 1.25s;
 	        transition: all ease-out 1.25s;
 	position: absolute;
+	z-index: 10;
 	border: 0;
 	text-transform: lowercase;
 	background: transparent;
 }
 
 .boehoehoe input:nth-of-type(1) {
-	font-size: 10em;
+	font-size: 130px;
 	left: 100px;
-	top: 50px;
+	top: 30px;
 	color: rgba(255, 0, 0, 0.9);
 }
 
 .boehoehoe input:nth-of-type(2) {
-	font-size: 12em;
+	font-size: 160px;
 	left: 245px;
-	top: 120px;
+	top: 50px;
 	color: rgba(255, 0, 0, 0.7);
 }
 
 .boehoehoe input:nth-of-type(3) {
-	font-size: 14em;
-	left: 420px;
-	top: 30px;
+	font-size: 190px;
+	left: 460px;
+	top: -30px;
 	color: rgba(255, 0, 0, 0.5);
+}
+
+.boehoehoe kbd {
+	line-height: 0;
+	color: transparent;
+}
+
+.boehoehoe h1 {
+	font-size: 120%;
+	text-align: center;
+}
+
+.boehoehoe img {
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	height: 800px;
 }
 </style>
 
