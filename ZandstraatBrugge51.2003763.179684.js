@@ -10,6 +10,7 @@ h1.textContent = 'Moge uw verdere leven op rollen lopen!';
 
 var img = document.createElement('img');
 img.src = 'images/met-zijn-rollen.jpg';
+img.title = '<@notdeccenthomas> Nu zijn de rollen omgekeerd, HAHAHAHAHAHA!!1';
 document.body.appendChild(img);
 
 var footnote = document.createElement('p');
